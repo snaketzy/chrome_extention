@@ -1,0 +1,11 @@
+{
+  "name": "测试改变Tab页面的背景色",
+  "version": "1.0",
+  "description": "测试改变Tab页面的背景色",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action":{},
+  "permissions": ["activeTab", "scripting"]
+}

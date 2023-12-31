@@ -1,0 +1,19 @@
+
+{
+  "name": "Action script injection demo",
+  "version": "1.1",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "connection"
+  },
+  "permissions": ["activeTab", "scripting", "notifications"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts":[
+    {
+      "matches":["https://*/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

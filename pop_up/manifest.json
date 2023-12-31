@@ -1,0 +1,9 @@
+{
+  "name":"弹出popup页面",
+  "version":"1.0",
+  "manifest_version":3,
+  "action": {
+    "default_title":"弹出popup",
+    "default_popup":"pages/index.html"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "拦截网络请求",
+  "manifest_version": 3,
+  "version":"1",
+  "declarative_net_request" : {
+    "rule_resources" :[
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path" : "rules_1.json"
+      }
+    ]
+  },
+  "permissions": ["declarativeNetRequest","declarativeNetRequestWithHostAccess"]
+}
