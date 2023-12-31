@@ -1,0 +1,12 @@
+{
+  "name":"测试content_script，注入css",
+  "manifest_version": 3,
+  "version":"1",
+  "content_scripts":[
+    {
+      "matches":["https://*.viphrm.com/*"],
+      "css":["scripts/index.css"],
+      "js": ["scripts/index.js"]
+    }
+  ]
+}

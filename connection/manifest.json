@@ -1,0 +1,16 @@
+{
+  "name": "Message Dispatch",
+  "version": "1.5",
+  "description": "实现插件模块间数据通信",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "action":{
+    "default_popup":"popup.html",
+    "default_title" : "测试获取title"
+  },
+  "manifest_version": 3
+}

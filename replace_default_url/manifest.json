@@ -1,0 +1,9 @@
+{
+  "name": "替换newTab的默认url",
+  "manifest_version": 3,
+  "version": "1.0",
+  "description": "替换默认url",
+  "chrome_url_overrides":{
+    "newtab":"index.html"
+  }
+}
