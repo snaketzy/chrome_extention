@@ -20,6 +20,16 @@ const testMessage = async () => {
   // do something with response here, not outside the function
   //  alert(response.farewell)
   setChildTextNode("resultsRequest", response.farewell);
+  fetchData()
+}
+
+const fetchData = async () => {
+  const res = await fetch("https://prerecruit.viphrm.com/roster/weizhi/moa/company/list/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E5%AE%A2%E6%88%B7",{
+    method:"post"
+  });
+  const response = await res.json();
+
+  return alert(response.data.records[0].name)
 }
 
 
