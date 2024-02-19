@@ -1,0 +1,70 @@
+// 首页（登陆页面）
+.login {
+    height: 100%;
+    background: url("../img/login-bg.png") no-repeat center center;
+}
+
+.login-header {
+    opacity: .7;
+}
+
+.login-body {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+}
+
+.slogan {
+    float: left;
+    margin-top: 100px;
+    width: 365px;
+    height: 110px;
+    background: url("../img/slogan.png") no-repeat center center;
+}
+
+.login-form {
+    float: right;
+    padding: 35px 35px 5px;
+    width: 350px;
+    background-color: #fff;
+
+    .btn-block {
+        margin-top: 15px;
+    }
+}
+
+.login-footer {
+    color: #fff;
+    background-color: transparent;
+
+    .nav-link {
+        color: #fff;
+        border-color: #fff;
+    }
+}
+
+.verify-img {
+    width: 80px;
+    height: $field-height;
+}
+
+.login-popup {
+
+    .popup {
+        width: 500px;
+    }
+
+    .popup-body-inner {
+        font-size: 14px;
+        padding-top: 20px;
+    }
+
+    .popup-footer .btn {
+        margin: 20px 10px;
+    }
+}
+
+.verify-code-group {
+    display: none;
+}

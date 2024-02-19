@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 9]> <html lang="zh-CN" class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="zh-CN">
+  <!--<![endif]-->
+  <head>
+    <title>创建公司 - 会员中心</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+
+    <link rel="icon" href="../img/logo.ico" type="image/icon" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/style.css?v=2.2.20" />
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/common.js?v=2.2.20"></script>
+  </head>
+  <body>
+    <!-- 头部 -->
+    <div id="header" class="header">
+      <div class="header-box">
+        <a class="header-logo" href="/"></a>
+        <div class="header-btn"></div>
+      </div>
+    </div>
+
+    <div id="body" class="content-wrap">
+      <!-- 步骤进度条 -->
+      <div class="step-container">
+        <ul class="step-bar">
+          <li class="step-item active">
+            <div class="step-text">个人注册</div>
+          </li>
+          <li class="step-item active">
+            <div class="step-text">加入或创建公司</div>
+          </li>
+          <li class="step-item">
+            <div class="step-text">申请审核</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 注册表单 -->
+      <form class="register-form" autocomplete="off">
+        <div class="form-group">
+          <div class="form-field-wrap">
+            <label class="form-label">公司名称</label>
+            <div class="form-field">
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                placeholder="请输入您要创建的公司名称"
+              />
+            </div>
+          </div>
+          <div class="form-tips"></div>
+        </div>
+        <div class="form-group">
+          <div class="form-field-wrap">
+            <label class="form-label">公司类型</label>
+            <div class="form-field js-company-type"></div>
+          </div>
+          <div class="form-tips"></div>
+        </div>
+        <div class="form-group">
+          <div class="form-field-wrap">
+            <label class="form-label">行&emsp;&emsp;业</label>
+            <div class="form-field">
+              <div class="js-industry"></div>
+              <input type="hidden" name="industryName" />
+            </div>
+          </div>
+          <div class="form-tips"></div>
+        </div>
+        <div class="form-group">
+          <div class="form-field-wrap">
+            <label class="form-label">联&ensp;系&ensp;人</label>
+            <div class="form-field">
+              <input
+                type="text"
+                class="form-control"
+                name="contactName"
+                placeholder="输入您的真实姓名"
+              />
+            </div>
+          </div>
+          <div class="form-tips"></div>
+        </div>
+        <div class="form-group">
+          <div class="form-field-wrap">
+            <label class="form-label">证件号码</label>
+            <div class="form-field">
+              <input
+                type="text"
+                class="form-control"
+                name="businessLicenseCode"
+                placeholder="输入你的统一社会信用代码"
+              />
+            </div>
+          </div>
+          <div class="form-tips"></div>
+        </div>
+        <div class="form-group upload-group">
+          <label class="form-label">上传证件</label>
+          <div class="form-field">
+            <div class="form-file">
+              <input
+                type="file"
+                class="form-file-input"
+                name="fileUpload"
+                accept="image/gif,image/png,image/jpg,image/jpeg"
+              />
+              <input type="hidden" name="businessLicense" value="" />
+              <span class="form-file-btn btn btn-default">上传图片</span>
+            </div>
+            <div class="upload-img-area">
+              <img id="uploadImg" src="" alt="暂无图片" />
+            </div>
+          </div>
+          <div class="form-tips">支持jpg, png, gif格式的文件，且文件大小不超过2MB</div>
+        </div>
+        <div class="form-group">
+          <div class="btn-group">
+            <div class="btn-group-cell">
+              <button type="button" class="btn btn-primary btn-disabled" formBind>创建公司</button>
+            </div>
+            <div class="btn-group-cell">
+              <button type="button" class="btn btn-default js-btn-join">返回“加入公司”</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- 底部 -->
+    <div id="footer" class="footer">
+      <ul class="footer-nav nav">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">关于我们</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">法律条款</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">条款</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">隐私</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">安全性</a>
+        </li>
+      </ul>
+      <p>版权所有 2015-2019 viphrm.com Corporation. 保留一切权利.</p>
+      <p>
+        <a
+          href="https://beian.miit.gov.cn"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: #fff"
+          >沪ICP备09067369号-4</a
+        >
+      </p>
+    </div>
+
+    <!-- 相马底部 -->
+    <div class="footer-xiang-ma">
+      <div>
+        <div>
+          <a href="https://xiangmayun.cn/main/static/introduction" target="_blank">关于我们</a>
+          <span>官方客服<p>400-820-9911</p></span>
+        </div>
+        <div>
+          <span>
+            <p>Copyright ©<script>document.write(new Date().getFullYear());</script>上海相马人力资源科技有限公司</p>
+            <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">沪ICP备2020034059号-1</a>
+          </span>
+          <span>
+            <img src="https://cdn.xiangmayun.cn/images/xmcode.jpg" alt="微知-相马云"/>
+            相马云微信小程序
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 加入公司确认弹窗 -->
+    <div class="popup-mask js-join-popup">
+      <div class="popup popup-confirm">
+        <div class="popup-header">
+          <h4 class="popup-title">申请加入公司</h4>
+        </div>
+        <div class="popup-body">
+          <div class="popup-body-inner">
+            确定加入“<span class="js-company-name"></span>”吗？
+          </div>
+        </div>
+        <div class="popup-footer">
+          <button type="button" class="btn btn-default">取消</button>
+          <button type="button" class="btn btn-primary">确定</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 错误提示框 -->
+    <div class="popup-mask js-error-popup">
+      <div class="popup popup-alert">
+        <div class="popup-header">
+          <h4 class="popup-title">错误</h4>
+        </div>
+        <div class="popup-body">
+          <div class="popup-body-inner"></div>
+        </div>
+        <div class="popup-footer">
+          <button type="button" class="btn btn-primary">确定</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/create.js?v=2.2.20"></script>
+  </body>
+</html>

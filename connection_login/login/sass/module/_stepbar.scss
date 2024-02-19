@@ -1,0 +1,75 @@
+$base-step-color: lighten($base-font-color, 30%);
+$active-step-color: $base-blue;
+
+.step-container {
+    width: $form-width;
+    padding: 50px ($wrapper-width - $form-width)/2;
+}
+
+// 步骤进度条
+.step-bar {
+    display: table;
+    table-layout: fixed;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    counter-reset: flag;
+}
+
+.step-item {
+    display: table-cell;
+    cursor: default;
+    color: $base-step-color;
+
+    &.active {
+        color: $active-step-color;
+
+        .step-text:before,
+        .step-text:after {
+            background-color: $active-step-color;
+        }
+    }
+}
+
+.step-text{
+    $size: 30px;
+
+    position: relative;
+    margin-top: $size;
+    height: $size;
+    line-height: $size;
+    text-align: center;
+
+    // 圆圈
+    &:before {
+        position: absolute;
+        top: -$size;
+        right: 0;
+        left: 0;
+        z-index: 2;
+        margin: 0 auto;
+        width: $size;
+        height: $size;
+        line-height: $size;
+        text-align: center;
+        color: #fff;
+        border-radius: $size/2;
+        background-color: $base-step-color;
+        content: counter(flag);
+        counter-increment: flag;
+        box-shadow: 0 0 0 2px rgb(255, 255, 255);
+    }
+
+    // 线条
+    &:after {
+        position: absolute;
+        top: -($size/2);
+        left: 0;
+        right: 0;
+        z-index: 1;
+        height: 4px;
+        background-color: $base-step-color;
+        content: '';
+    }
+}

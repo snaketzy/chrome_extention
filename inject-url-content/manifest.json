@@ -6,7 +6,7 @@
     {
       "matches":["https://*.viphrm.com/*"],
       "css":["scripts/index.css"],
-      "js": ["scripts/index.js"]
+      "js": ["scripts/jquery.js","scripts/index.js"]
     }
   ]
 }

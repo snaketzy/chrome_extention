@@ -1,0 +1,491 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 9]>
+<html lang="zh-CN" class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="zh-CN">
+  <!--<![endif]-->
+  <head>
+    <title>会员中心</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <style>
+     
+
+      a {
+        background: transparent;
+      }
+
+      a:focus {
+        outline: thin dotted;
+      }
+
+      a:active,
+      a:hover {
+        outline: 0;
+      }
+
+      img {
+        border: 0;
+      }
+
+      /* .y-modal-add-email button,
+        .y-modal-add-email input, */
+      select,
+      textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: 100%;
+      }
+
+      /* .y-modal-add-email button, */
+      input {
+        line-height: normal;
+      }
+
+      button,
+      select {
+        text-transform: none;
+      }
+
+      /* .y-modal-add-email *, :before, :after { */
+      :before,
+      :after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .clearfix:before,
+      .clearfix:after {
+        display: table;
+        content: " ";
+      }
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #006cb8;
+      }
+
+      a:hover,
+      a:focus {
+        cursor: pointer;
+        text-decoration: none;
+        color: #006cb8;
+        outline: none;
+      }
+
+      /* button,
+        html .y-modal-add-email input[type="button"],
+        .y-modal-add-email input[type="reset"],
+        .y-modal-add-email input[type="submit"] { */
+      button {
+        -webkit-appearance: button;
+        cursor: pointer;
+      }
+
+      /* button[disabled],
+            html .y-modal-add-email input[disabled] { */
+      button[disabled] {
+        cursor: default;
+      }
+
+      button::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+      }
+
+
+      .center-block {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .pull-right {
+        float: right !important;
+      }
+
+      .pull-left {
+        float: left !important;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .showing {
+        display: block;
+      }
+
+      .hidden {
+        display: none !important;
+        visibility: hidden !important;
+      }
+
+      .show {
+        display: block !important;
+        visibility: visible !important;
+      }
+
+      .invisible {
+        visibility: hidden;
+      }
+
+      .text-hide {
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+      }
+
+      .fade.in {
+        opacity: 1;
+      }
+
+      .modal-open {
+        overflow: hidden;
+      }
+
+      .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        display: none;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        pointer-events: none;
+        outline: 0;
+      }
+
+      .modal.fade .modal-dialog {
+        -webkit-transition: -webkit-transform 0.3s ease-out;
+        -o-transition: -o-transform 0.3s ease-out;
+        transition: -webkit-transform 0.3s ease-out;
+        transition: transform 0.3s ease-out;
+        transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out,
+          -o-transform 0.3s ease-out;
+        -webkit-transform: translate(0, -25%);
+        -ms-transform: translate(0, -25%);
+        -o-transform: translate(0, -25%);
+        transform: translate(0, -25%);
+      }
+
+      .modal.in .modal-dialog {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+
+      .modal > .loader {
+        display: none;
+      }
+
+      .modal.modal-loading .modal-dialog {
+        opacity: 0;
+      }
+
+      .modal.modal-loading .loader {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        display: block;
+        width: 80px;
+        margin-left: -40px;
+        font-size: 56px;
+        color: #fff;
+        text-align: center;
+      }
+
+      .modal {
+        color: #353535;
+        font-size: 13px;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .modal-iframe .modal-body > iframe {
+        border-radius: 0 0 6px 6px;
+      }
+
+      .modal-dialog {
+        position: relative;
+        width: auto;
+        pointer-events: initial;
+        background-color: #fff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: 1px solid #999;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        outline: 0;
+        -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-dialog.modal-moveable {
+        position: absolute;
+        margin: 0;
+      }
+
+      .modal-dialog.modal-moveable .modal-header {
+        cursor: move;
+      }
+
+      .modal-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-backdrop.in {
+        filter: alpha(opacity=50);
+        /* opacity: .5; */
+      }
+
+      .modal-header {
+        min-height: 16.53846154px;
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .modal-header .close {
+        margin-top: -2px;
+      }
+
+      .modal-title {
+        margin: 0;
+        line-height: 1.53846154;
+      }
+
+      .modal-body {
+        position: relative;
+        padding: 15px;
+      }
+
+      .modal-footer {
+        padding: 15px;
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+      }
+
+       .modal-footer .btn-group .btn + .btn,
+      .modal-footer .btn-group-vertical .btn + .btn {
+        margin-left: -1px;
+      }
+
+      .modal-footer .btn-block + .btn-block {
+        margin-left: 0;
+      }
+
+      .modal-scrollbar-measure {
+        position: absolute;
+        top: -9999px;
+        width: 50px;
+        height: 50px;
+        overflow: scroll;
+      }
+
+      @media (min-width: 768px) {
+        .modal-dialog {
+          width: 600px;
+          margin: 30px auto;
+          -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-sm {
+          width: 300px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .modal-lg {
+          width: 900px;
+        }
+      }
+
+      .close {
+        float: right;
+        font-size: 19.5px;
+        font-weight: 700;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: 0.2;
+      }
+
+      button.close {
+        -webkit-appearance: none;
+        padding: 0;
+        cursor: pointer;
+        background: 0 0;
+        border: 0;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        /* overflow: hidden; */
+        clip: rect(0 0 0 0);
+        border: 0;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        filter: alpha(opacity=50);
+        opacity: 0.5;
+      }
+
+      /*modal*/
+      .modal-dialog {
+        width: 366px;
+      }
+
+      .modal-header {
+        height: 40px;
+        line-height: 40px;
+        min-height: 40px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        background: #006cb8;
+        padding: 0 15px;
+      }
+
+      .modal-header h4 {
+        line-height: 40px;
+      }
+
+      .modal-header .close {
+        text-shadow: none;
+        opacity: 1;
+      }
+
+      .modal-header .close span {
+        color: #fff !important;
+        font-size: 12px;
+      }
+
+      .modal-body {
+        padding: 20px 25px 70px 25px;
+      }
+
+    </style>
+    <link rel="icon" href="img/logo.ico" type="image/icon" />
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link rel="stylesheet" href="css/style.css?v=2.2.20" />
+    <script type="text/javascript" src="js/config/config_pre.js?v=2.2.20"></script>
+    <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/jquery/jquery-migrate.min.js"
+    ></script>
+    <script type="text/javascript" src="js/jquery/jquery.cookie.js"></script>
+    <script src="js/util.js?v=2.2.20"></script>
+    <script type="text/javascript" src="js/common.js?v=2.2.20"></script>
+  </head>
+  <body class="login">
+    <!-- 主体 -->
+    <div id="body">
+      <div class="login-body content-wrap clearfix">
+        <!-- 登陆表单 -->
+        <form class="login-form" autocomplete="off">
+          <div class="form-group">
+            <div class="form-field-wrap">
+              <label class="form-label">账&emsp;&emsp;号</label>
+              <div class="form-field">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="userName"
+                  placeholder="请输入您的邮箱或手机号码"
+                />
+              </div>
+            </div>
+            <div class="form-tips"></div>
+          </div>
+          <div class="form-group">
+            <div class="form-field-wrap">
+              <label class="form-label">密&emsp;&emsp;码</label>
+              <div class="form-field">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  placeholder="请输入您的密码"
+                />
+              </div>
+            </div>
+            <div class="form-tips"></div>
+          </div>
+          <div class="form-group horizontal-group verify-code-group">
+            <img src="" class="verify-img pull-right" alt="暂无图片" />
+            <div class="form-field-wrap">
+              <label class="form-label">验&ensp;证&ensp;码</label>
+              <div class="form-field">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="verifyCode"
+                  placeholder="请输入验证码"
+                />
+              </div>
+            </div>
+            <div class="form-tips"></div>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-block btn-primary" formBind>登录</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 登录空间弹窗 -->
+    <div class="popup-mask login-popup">
+      <div class="popup popup-confirm">
+        <div class="popup-header">
+          <h4 class="popup-title">登录空间</h4>
+          <span class="popup-close js-popup-close">&times;</span>
+        </div>
+        <div class="popup-body">
+          <form class="popup-body-inner js-login-space-form">
+            <div class="form-group">
+              <div class="form-field-wrap">
+                <label class="form-label">公司名称</label>
+                <div class="form-field js-login-select"></div>
+              </div>
+              <div class="form-tips"></div>
+            </div>
+          </form>
+        </div>
+        <div class="popup-footer">
+          <button type="button" class="btn btn-primary">确定</button>
+          <button type="button" class="btn btn-default js-popup-close">取消</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/index.js?v=2.2.20"></script>
+  </body>
+</html>

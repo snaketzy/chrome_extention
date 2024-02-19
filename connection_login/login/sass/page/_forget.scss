@@ -1,0 +1,58 @@
+// 密码找回和设置新密码
+.forget-tab {
+    width: $form-width;
+    margin: 0 auto;
+
+    .tab-nav {
+        text-align: center;
+    }
+}
+
+.forget-tel-form,
+.forget-email-form {
+    padding: 1px;
+
+    .verify-img {
+        width: 132px;
+    }
+}
+
+.reset-password-form {
+    width: $form-width;
+    margin: 0 auto;
+
+    .rp-w500 {
+        width: 500px;
+    }
+}
+
+.password-strong {
+    margin-top: 12px;
+
+    .strong-item {
+        position: relative;
+        float: left;
+        margin: 10px 2px 0 0;
+        width: 60px;
+        text-align: center;
+
+        &:before {
+            position: absolute;
+            top: -10px;
+            right: 0;
+            left: 0;
+            content: '';
+            height: 5px;
+            background-color: #ccc;
+        }
+
+        &.active {
+            color: red;
+
+            &:before {
+                background-color: red;
+            }
+        }
+    }
+}
+

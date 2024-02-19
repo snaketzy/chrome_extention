@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 9]> <html lang="zh-CN" class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="zh-CN">
+  <!--<![endif]-->
+  <head>
+    <title>修改密码 - 会员中心</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <link rel="icon" href="../img/logo.ico" type="image/icon" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/style.css?v=2.2.20" />
+    <script type="text/javascript" src="../js/config.js?v=2.2.20"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/common.js?v=2.2.20"></script>
+  </head>
+  <body>
+    <!-- 头部 -->
+    <div id="header" class="header">
+      <div class="header-box">
+        <a class="header-logo" href="/"></a>
+        <div class="header-btn"></div>
+      </div>
+    </div>
+
+    <div id="body" class="content-wrap">
+      <!-- 步骤进度条 -->
+      <div class="step-container">
+        <ul class="step-bar">
+          <li class="step-item active">
+            <div class="step-text">修改密码</div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="reset-password-form" autocomplete="off">
+        <div class="form-group rp-w500">
+          <div class="form-field-wrap">
+            <label class="form-label">旧&nbsp;密&nbsp;码</label>
+            <div class="form-field">
+              <input
+                type="password"
+                class="form-control"
+                name="oldPassword"
+                placeholder="请输入旧密码"
+              />
+            </div>
+          </div>
+          <div class="form-tips"></div>
+        </div>
+
+        <div class="form-group horizontal-group">
+          <div class="password-strong pull-right">
+            <div class="strong-item">弱</div>
+            <div class="strong-item">中</div>
+            <div class="strong-item">高</div>
+          </div>
+          <div class="form-field-wrap">
+            <label class="form-label">新&ensp;密&ensp;码</label>
+            <div class="form-field">
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                placeholder="请输入密码"
+              />
+            </div>
+          </div>
+          <div class="form-tips"></div>
+        </div>
+
+        <div class="form-group rp-w500">
+          <div class="form-field-wrap">
+            <label class="form-label">确认密码</label>
+            <div class="form-field">
+              <input
+                type="password"
+                class="form-control"
+                name="confirmPwd"
+                placeholder="请再次输入密码"
+              />
+            </div>
+          </div>
+          <div class="form-tips"></div>
+        </div>
+
+        <div class="form-group rp-w500">
+          <div class="btn-group">
+            <div class="btn-group-cell">
+              <button type="button" class="btn btn-primary btn-disabled" formBind>确定</button>
+            </div>
+            <div class="btn-group-cell">
+              <button type="reset" class="btn btn-default js-form-reset">重置</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- 底部 -->
+    <div id="footer" class="footer">
+      <ul class="footer-nav nav">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">关于我们</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">法律条款</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">条款</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">隐私</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">安全性</a>
+        </li>
+      </ul>
+      <p>版权所有 2015-2019 viphrm.com Corporation. 保留一切权利.</p>
+      <p>
+        <a
+          href="https://beian.miit.gov.cn"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: #999"
+          >沪ICP备09067369号-4</a
+        >
+      </p>
+    </div>
+
+    <!-- 相马底部 -->
+    <div class="footer-xiang-ma">
+      <div>
+        <div>
+          <a href="https://xiangmayun.cn/main/static/introduction" target="_blank">关于我们</a>
+          <span>官方客服<p>400-820-9911</p></span>
+        </div>
+        <div>
+          <span>
+            <p>Copyright ©<script>document.write(new Date().getFullYear());</script>上海相马人力资源科技有限公司</p>
+            <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">沪ICP备2020034059号-1</a>
+          </span>
+          <span>
+            <img src="https://cdn.xiangmayun.cn/images/xmcode.jpg" alt="微知-相马云"/>
+            相马云微信小程序
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/update.js?v=2.2.20"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+.btn {
+    display: inline-block;
+    padding: 0 30px;
+    height: $field-height;
+    line-height: $field-height;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: $field-height/2;
+    border: 1px solid $field-border-color;
+    transition: border-color .3s ease-in;
+}
+
+// 默认按钮
+.btn-default {
+    color: $base-font-color;
+    background-color: #fff;
+
+    &:hover {
+        border-color: $base-blue;
+        color: $base-blue;
+    }
+}
+
+// 提交按钮
+.btn-primary {
+    color: #fff;
+    background-color: $base-blue;
+
+    &:hover {
+        background-color: lighten($base-blue, 5%);
+    }
+}
+
+// 禁用按钮
+.btn-disabled,
+.btn-disabled:hover {
+    cursor: default;
+    color: lighten($base-font-color, 30%);
+    border-color: #f0f0f0;
+    background-color: #f0f0f0;
+}
+
+// 块级按钮
+.btn-block {
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-group {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    .btn-group-cell {
+        display: table-cell;
+        vertical-align: middle;
+
+        .btn {
+            @extend .btn-block;
+            margin-bottom: 0;
+        }
+    }
+
+    .btn-group-cell + .btn-group-cell {
+        padding-left: 10px;
+    }
+}

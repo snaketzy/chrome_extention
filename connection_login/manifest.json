@@ -1,0 +1,19 @@
+{
+  "name": "简历采集插件",
+  "version": "0.1",
+  "description": "实现简历采集",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "action":{
+    "default_popup":"login/index.html",
+    "default_title" : "测试获取title，及调用接口"
+  },
+  "manifest_version": 3
+}

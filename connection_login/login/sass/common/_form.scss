@@ -1,0 +1,116 @@
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+    @extend .clearfix;
+}
+
+.form-label {
+    float: left;
+    margin: ($field-height - 22)/2 10px;
+    padding-right: 10px;
+    height: 20px;
+    line-height: 20px;
+    color: $base-font-color;
+}
+
+.form-field {
+    overflow: hidden;
+}
+
+.form-tips {
+    position: absolute;
+    left: 0;
+    bottom: -22px;
+    display: none;
+    height: 20px;
+    line-height: 20px;
+    color: #c00;
+}
+
+.form-field-wrap {
+    @extend .clearfix;
+    padding-right: 10px;
+    border: 1px solid $field-border-color;
+    transition: all .3s ease-in;
+
+    .form-label {
+        border-right: 1px solid $field-border-color;
+    }
+}
+
+// 输入框，下拉框
+.form-control {
+    display: block;
+    width: 100%;
+    height: $field-height - 2;
+    line-height: $field-height - 2;
+    color: $base-font-color;
+    border: 0;
+}
+
+// 单选框，复选框
+.form-check {
+    position: relative;
+    display: block;
+    padding-left: 20px;
+    height: $field-height;
+    line-height: $field-height;
+    color: $base-font-color;
+}
+
+.form-check-input {
+    position: absolute;
+    top: 13px;
+    left: 0;
+}
+
+// 上传框
+.form-file {
+    position: relative;
+}
+
+.form-file-input {
+    position: relative;
+    z-index: 2;
+    width: 118px;
+    height: $field-height;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.form-file-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+// 表单里的链接
+.form-link {
+    margin-top: ($field-height - 16)/2;
+    height: 16px;
+    line-height: 16px;
+    color: $base-blue-light;
+
+    &:hover {
+        color: lighten($base-blue-light, 10%);
+    }
+}
+
+// 水平列
+.horizontal-group {
+    .form-field-wrap {
+        overflow: hidden;
+    }
+
+    .pull-right {
+        margin-left: 15px;
+    }
+}
+
+// 错误状态
+.form-status-error {
+    .form-field-wrap {
+        border-color: #c00;
+    }
+}

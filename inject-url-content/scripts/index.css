@@ -1,3 +1,16 @@
 .login-module-right {
-  background-color: #1890ff!important;
+  background-color: #fff!important;
+}
+
+.gather {
+  width: 100px;
+  height: 100px;
+  background-color: #1890ff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+.btn {
+  width: 50px!important;
+  height: 25px!important;
 }

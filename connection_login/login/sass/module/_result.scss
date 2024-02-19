@@ -1,0 +1,63 @@
+// 结果展示
+.result-container {
+    text-align: center;
+}
+
+.result {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 50px;
+    min-height: 50px;
+}
+
+.result-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.result-title {
+    margin: 0 0 10px 70px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.result-content {
+    margin-left: 70px;
+    text-align: left;
+    line-height: 1.5;
+    color: $base-font-color;
+}
+
+.result-status-success {
+    .result-icon {
+        background: url("../img/icon-success.png") no-repeat center center;
+    }
+
+    .result-title {
+        color: #495;
+    }
+}
+
+.result-status-error {
+    .result-icon {
+        background: url("../img/icon-reject.png") no-repeat center center;
+    }
+
+    .result-title {
+        color: #d10f1b;
+    }
+}
+
+.result-status-wait {
+    .result-icon {
+        background: url("../img/icon-wait.png") no-repeat center center;
+    }
+
+    .result-title {
+        color: #f90;
+    }
+}

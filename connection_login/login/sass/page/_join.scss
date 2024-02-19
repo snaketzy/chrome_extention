@@ -1,0 +1,96 @@
+// 加入公司页面
+.search-form {
+    margin: 0 ($wrapper-width - $form-width)/2;
+    width: $form-width;
+
+    .search-wrap {
+        width: $form-width - 300px;
+    }
+
+    .btn-group {
+        width: 300px;
+
+        .btn-group-cell {
+            padding-left: 4px;
+        }
+
+        .btn {
+            padding: 0 10px;
+        }
+    }
+}
+
+.rs-account {
+    color: #000;
+}
+
+.search-list {
+    display: none;
+    margin-top: -1px;
+    border: 1px solid $field-border-color;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .2);
+}
+
+.search-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    td {
+        padding: 0;
+        font-size: 12px;
+        line-height: 1.8;
+        color: $base-font-color;
+    }
+
+    .tb-cell-link {
+        color: $base-blue-light;
+        cursor: pointer;
+    }
+
+    .tb-empty-rows {
+        text-align: center;
+        color: $base-font-color;
+        background-color: #fff;
+    }
+
+    tbody {
+        tr:hover {
+            td, .tb-cell-link {
+                color: #fff;
+                background-color: $base-blue;
+            }
+
+            .tb-empty-rows {
+                @extend .tb-empty-rows;
+            }
+        }
+    }
+
+    tfoot {
+        td {
+            background-color: #eee;
+        }
+
+        .tb-cell-link {
+            margin-right: 10px;
+        }
+    }
+}
+
+.tb-cell {
+    padding: 5px;
+}
+
+.tb-cell-num {
+    width: 20px;
+    text-align: center;
+}
+
+.tb-cell-company {
+    .tb-cell {
+        width: 300px;
+        @extend .ellipsis;
+    }
+}
+
