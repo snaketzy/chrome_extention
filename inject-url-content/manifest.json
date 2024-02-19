@@ -1,12 +1,19 @@
 {
-  "name":"测试content_script，注入css",
+  "name":"注入测试content_script，inject-url-content",
   "manifest_version": 3,
   "version":"1",
   "content_scripts":[
     {
-      "matches":["https://*.viphrm.com/*"],
+      "matches": ["http://*/*", "https://*/*"],
       "css":["scripts/index.css"],
       "js": ["scripts/jquery.js","scripts/index.js"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action":{
+    "default_popup":"popup.html",
+    "default_title" : "测试接收数据240219"
+  }
 }
