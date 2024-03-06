@@ -205,7 +205,7 @@ $(function () {
     }
   });
 
-  // 根据公司信息，检测公司状态，并跳转相应地址
+  /**根据公司信息，检测公司状态，并跳转相应地址 */
   function chooseLogin(companyInfo, uid, user) {
     var returnUrl = $.moa.formatUrlParams().returnUrl;
 
@@ -308,7 +308,27 @@ $(function () {
                 homeUrl = moaConfig.homeUrl
               }
             }
-            debugger
+
+            // 测试给content_script发送信息
+            chrome.tabs.query({
+              active: true,
+              currentWindow: true
+            }, (tabs) => {
+                let message = {
+                    info: {
+                      ms_cid: localStorage.getItem("ms_cid"),
+                      ms_member_token: localStorage.getItem("ms_member_token"),
+                      supplierId: user.userId,
+                      supplierName: user.realName,
+                      operatorName: user.realName
+                    }
+                }
+                
+                chrome.tabs.sendMessage(tabs[0].id, message, res => {
+                    console.log('popup=>content')
+                    console.log(res)
+                })
+            })
             // window.location.href = homeUrl;
           }
         });
