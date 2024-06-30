@@ -26,8 +26,7 @@ const fetchData = async () => {
     method:"post"
   });
   const response = await res.json();
-
-  return alert(response.data.records[0].name)
+  return alert(JSON.stringify(response.data.records[0]))
 }
 
 

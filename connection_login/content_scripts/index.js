@@ -1,5 +1,6 @@
 (
   () => {
+
     const div = document.createElement("div");
     div.className = "gather"
 
@@ -33,7 +34,7 @@
 
 // 获取从popup传过来的登录数据
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log(request.info)
+  console.log("登录信息如下:",request.info)
   localStorage.setItem("ms_cid", request.info.ms_cid)
   localStorage.setItem("ms_member_token", request.info.ms_member_token)
   localStorage.setItem("supplierId", request.info.supplierId)
@@ -46,12 +47,13 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 /**测试调用测试环境接口 */
 const fetchData = async () => {
-  const res = await fetch("https://prerecruit.viphrm.com/roster/weizhi/moa/company/list/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E5%AE%A2%E6%88%B7", {
-    method: "post"
-  });
-  const response = await res.json();
+  // const res = await fetch("https://prerecruit.viphrm.com/roster/weizhi/moa/company/list/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E5%AE%A2%E6%88%B7", {
+  //   method: "post"
+  // });
+  // const response = await res.json();
 
-  return alert(response.data.records[0].name)
+  // return alert(JSON.stringify(response.data.records[0]))
+  return alert("当前登录人：" + localStorage.getItem("supplierName"))
 }
 
 /** 测试数据入库 */

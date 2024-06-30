@@ -1,20 +1,38 @@
 {
   "name": "简历采集插件，connection_login",
-  "version": "0.1",
-  "description": "实现简历采集，测试登录微知系统240219",
+  "version": "0.3",
+  "description": "实现简历采集，测试登录微知系统240630",
   "content_scripts":[
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": [
+        "http://*/*", 
+        "https://*/*",
+        "https://*/wuhan/*"
+      ],
+      "run_at": "document_start",
       "css":["content_scripts/index.css"],
-      "js": ["content_scripts/jquery.js","content_scripts/index.js"]
+      "js": [
+        "content_scripts/jquery.js",
+        "content_scripts/index.js",
+        "inject.js",
+        "injected.js"
+      ]
     }
   ],
+  "web_accessible_resources": [{
+    "resources": ["injected.js"],
+    "matches": ["http://*/*", "https://*/*"]
+  }],
   "background": {
     "service_worker": "background.js"
   },
   "action":{
     "default_popup":"login/index.html",
-    "default_title" : "测试登录微知系统240219"
+    "default_title" : "测试登录微知系统240630"
   },
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
   "manifest_version": 3
 }
