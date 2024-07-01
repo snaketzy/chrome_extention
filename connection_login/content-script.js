@@ -7,6 +7,8 @@
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
+    console.log("content-scripts")
+
     if (request.greeting === "hello")
       sendResponse({farewell: document.title});
   }

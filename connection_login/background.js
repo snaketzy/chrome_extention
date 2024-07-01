@@ -1,5 +1,6 @@
 // background.js
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    console.log("background")
     console.log(sender.tab ?
         "from a content script:" + sender.tab.url :
         "from the extension");

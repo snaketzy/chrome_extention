@@ -38,6 +38,15 @@
           pluginDiv.setAttribute("style","color:white;width: 200px")
 
           element.append(pluginDiv)
+          $(element).click(() => {
+            chrome.runtime.sendMessage({
+              name: localStorage.getItem("operatorName"),
+              appName: $(element).children()[0].children[1].innerHTML
+            }, res => {
+              alert(localStorage.getItem("operatorName"))
+              alert($(element).children()[0].children[1].innerHTML)
+            })
+          })
         });
         
       })
@@ -47,6 +56,7 @@
 
 // 获取从popup传过来的登录数据
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  console.log("content_scripts/index")
   console.log(request.info)
   localStorage.setItem("ms_cid", request.info.ms_cid)
   localStorage.setItem("ms_member_token", request.info.ms_member_token)
