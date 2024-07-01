@@ -28,6 +28,20 @@
         })
       }
     })
+    setTimeout(() => {
+      $(document).ready(() => {
+        $(".msant-col-4").each((index,element) => {
+          
+          const pluginDiv = document.createElement("div");
+          pluginDiv.className = "gather";
+          pluginDiv.innerText = `${localStorage.getItem("operatorName")}访问${$(element).children()[0].children[1].innerHTML}`
+          pluginDiv.setAttribute("style","color:white;width: 200px")
+
+          element.append(pluginDiv)
+        });
+        
+      })
+    }, 2000)
   }
 )();
 
