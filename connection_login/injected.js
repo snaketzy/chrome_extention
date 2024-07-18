@@ -49,7 +49,9 @@
                   try {
 
                       // here you get RESPONSE TEXT (BODY), in JSON format, so you can use JSON.parse
-                      console.log(this.response ? JSON.parse(this.response) : "--")
+                      if(this._url.includes("joblist")) {
+                        console.log(this.response ? JSON.parse(this.response) : "--")
+                      }
                       // debugger
                       return
                       var arr = this.responseText;

@@ -20,7 +20,7 @@
     }
   ],
   "web_accessible_resources": [{
-    "resources": ["injected.js"],
+    "resources": ["content_scripts/jquery.js","content_scripts/index.js","injected.js"],
     "matches": ["http://*/*", "https://*/*"]
   }],
   "background": {
