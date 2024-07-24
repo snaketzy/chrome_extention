@@ -1,10 +1,93 @@
 (
   () => {
     const div = document.createElement("div");
-    div.className = "gather"
+    div.className = "gather";
+    
+    $("body").ready((event) => {
+      console.log("ready")
+      setTimeout(()=>{
+        // 在简历附件页面
+        if(document.title.includes("直聘简历")) {
+          //
+          // console.log("简历附件页面")
+          if($(document).find(".pdfViewer .gather").length === 0) {
+            $(document).find(".pdfViewer").prepend(div)
+            $(".gather").html("<button class='gather-btn'>采集数据</button> ")
+              $(".gather-btn").click(() => {
+                let email = ""
+                let age = ""
 
+                $("span[role='presentation']").each((index, element) => {
+                  // console.log(element)
+                  // 匹配邮箱
+                  if($(element).text().match(/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)) {
+                    email = $(element).text()
+                  }
+                  // 匹配年纪
+                  if($(element).text().includes("岁")) {
+                    age = $(element).text().match(/[0-9]+/)[0] || 0
+                  }
+                })
+
+                const params = {
+                  email,
+                  age
+                }
+                pushData(params);
+                chrome.runtime.sendMessage({
+                  params
+                }, res => {
+                  // alert($(event.target).parents(".hyperLink").find(".message-card-top-title").text())
+                  // console.log(res)
+                  // $(".gather").remove()
+                })
+              })
+          }
+          
+        }
+      },500)
+    })
+    $("body").mouseover((event) => {
+      // 只有简历，未交换电话的候选人
+      if($(document).find(".hyperLink").length > 0) {
+        $(document).find(".hyperLink").mouseover((event) => {
+          if($(document).find(".hyperLink .gather").length === 0) {
+            $(document).find(".hyperLink .message-card-buttons").append(div)
+            $(".gather").html("<button class='gather-btn'>采集数据</button> ")
+            $(".gather-btn").click(() => {
+              console.log("采集到的数据",$(event.target).parents(".hyperLink").find(".message-card-top-title").text())
+              const params = {
+                name: $(event.target).parents(".hyperLink").find(".message-card-top-title").text()
+              }
+              pushData(params);
+              chrome.runtime.sendMessage({
+                params
+              }, res => {
+                // alert($(event.target).parents(".hyperLink").find(".message-card-top-title").text())
+                // console.log(res)
+                // $(".gather").remove()
+              })
+            })
+          }
+          $(".gather").css({"display":"block"})
+        })
+        $(event.target).parents(".hyperLink").mouseleave(() => {
+          $(".gather").css({"display":"none"})
+        })
+      }
+      
+    })
     // boss后台的dom好像只有body能响应event
     $("body").click((event) => {
+      setTimeout(() => {
+        if($("iframe").length > 0) {
+          if(location.host.includes("zhipin.com")) {
+            const url = `//${location.host}${$("iframe").attr("src")}`
+            window.open(url,"_blank")
+          }
+        }
+      }, 1000)
+      // 交换电话的候选人
       if ($(event.target).parents(".contact-copy").length > 0) {
         $(event.target).parents(".contact-copy").append(div)
         $(".gather").html("<button class='gather-btn'>采集数据</button> ")
@@ -28,8 +111,12 @@
         })
       }
     })
+    $("iframe").on("click", function(){
+      alert("Click detected inside iframe.");
+    });
     setTimeout(() => {
       $(document).ready(() => {
+        
         $(".msant-col-4").each((index,element) => {
           
           const pluginDiv = document.createElement("div");
@@ -86,7 +173,8 @@ const pushData = async (params) => {
     "Authorization": "Bearer " + localStorage.getItem("ms_member_token"),
     "Mscid": localStorage.getItem("ms_cid")
   };
-  debugger
+  console.log("发起入库请求", headers, params)
+  return;
   const res = await fetch("https://prehmc.viphrm.com/broker/weizhi/callcenter/publicSea/employee/save", {
     method: "post",
     headers: {
